@@ -635,6 +635,7 @@ textarea {
 
 .build-live-grid,
 .archive-hero-grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
   gap: 1.5rem;
