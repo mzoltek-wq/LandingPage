@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build It Live Archive</title>
+    <meta
+      name="description"
+      content="Browse archived Build It Live sessions, filter by technical topic, and submit ideas for future hands-on builds."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="Build It Live archive home">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span class="brand-text">
+            <strong>Build It Live</strong>
+            <span>Archive and idea submissions</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Technical Landing Page</a>
+          <a href="#session-archive">Archive</a>
+          <a href="#idea-form">Submit an Idea</a>
+        </nav>
+
+        <a class="button button-small button-primary" href="#idea-form">Submit an Idea</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero archive-hero">
+        <div class="hero-background" aria-hidden="true"></div>
+        <div class="container archive-hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Hands-on technical content</p>
+            <h1>Build It Live Archive</h1>
+            <p class="hero-text">
+              A home for practical build sessions, archived walkthroughs, and technical use cases
+              your team can revisit after the live event. Browse sessions, filter by topic, and open
+              each item to see a summary plus a placeholder repository link for the application output.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#session-archive">Browse the Archive</a>
+              <a class="button button-secondary" href="#idea-form">Submit a Build Idea</a>
+            </div>
+
+            <p class="hero-reassurance">
+              Built as a realistic mockup for an archive page, not a final production CMS or video platform.
+            </p>
+          </div>
+
+          <aside class="archive-logo-card">
+            <img
+              src="BILBannerNew.png"
+              alt="Build It Live banner artwork showing a technical build series concept."
+            />
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact-section">
+        <div class="container trust-strip" aria-label="Archive highlights">
+          <article>
+            <strong>Archived recordings</strong>
+            <p>Session cards are ready for thumbnail, description, and replay links.</p>
+          </article>
+          <article>
+            <strong>Repo handoff</strong>
+            <p>Each session detail view includes a GitHub repo placeholder for the finished build.</p>
+          </article>
+          <article>
+            <strong>Idea intake</strong>
+            <p>Teams can submit future build concepts directly from the archive page.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <div class="featured-session-card">
+            <div class="featured-session-copy">
+              <p class="eyebrow">Featured session</p>
+              <h2>Build an AI service request assistant from intake to orchestration</h2>
+              <p>
+                This week’s featured mock session follows a realistic first-use-case pattern:
+                intake, routing, approvals, and a lightweight agent layer that helps operations
+                teams move faster without over-designing the first release.
+              </p>
+              <div class="featured-meta">
+                <span>52 min</span>
+                <span>April 18, 2026</span>
+                <span>Architecture walkthrough</span>
+              </div>
+              <div class="build-live-actions">
+                <a class="button button-primary" href="session.html?session=ai-service-request">
+                  Open featured session
+                </a>
+                <a class="button button-secondary" href="#idea-form">Suggest a follow-up build</a>
+              </div>
+            </div>
+
+            <div class="featured-session-side">
+              <div class="featured-stat">
+                <strong>12</strong>
+                <span>planned sessions in the launch series</span>
+              </div>
+              <div class="featured-stat">
+                <strong>4</strong>
+                <span>tracks across AI, integrations, automation, and apps</span>
+              </div>
+              <div class="featured-stat">
+                <strong>1 repo</strong>
+                <span>linked to every session as a reusable starting point</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Upcoming and recent</p>
+            <h2>A mix of upcoming live builds and archived sessions.</h2>
+            <p>
+              This makes the page feel useful before the full backlog exists: people can see what is
+              coming next and what they can watch right away.
+            </p>
+          </div>
+
+          <div class="event-rail">
+            <article class="event-card upcoming">
+              <span class="event-badge">Upcoming live</span>
+              <h3>June 3, 2026</h3>
+              <p>Build an operations copilot for triaging field service exceptions.</p>
+            </article>
+            <article class="event-card upcoming">
+              <span class="event-badge">Upcoming live</span>
+              <h3>June 10, 2026</h3>
+              <p>Wire SAP order data into a responsive exception-handling app.</p>
+            </article>
+            <article class="event-card recent">
+              <span class="event-badge">Recently added</span>
+              <h3>New archive entry</h3>
+              <p>Turn an AI blueprint into a scoped starter build with realistic technical milestones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="session-archive">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Archive</p>
+              <h2>Browse sessions by use case, audience, or keyword.</h2>
+            </div>
+            <p class="section-aside">
+              Replace the mock entries later with real video records, playback links, and repository destinations.
+            </p>
+          </div>
+
+          <div class="filter-bar" aria-label="Archive filters">
+            <div class="filter-field search-field">
+              <label for="session-search">Search sessions</label>
+              <input
+                id="session-search"
+                type="search"
+                placeholder="Search by title, use case, or keyword"
+              />
+            </div>
+
+            <div class="filter-field">
+              <label for="track-filter">Track</label>
+              <select id="track-filter">
+                <option value="all">All tracks</option>
+                <option value="ai">AI and agents</option>
+                <option value="integration">Integrations</option>
+                <option value="automation">Automation</option>
+                <option value="experience">Experience and apps</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="audience-filter">Audience</label>
+              <select id="audience-filter">
+                <option value="all">All audiences</option>
+                <option value="developer">Developers</option>
+                <option value="architect">Architects</option>
+                <option value="technical-lead">Technical leads</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="results-summary">
+            <p id="results-count">6 sessions</p>
+            <a class="text-link archive-back-link" href="index.html#build-it-live">Back to landing page</a>
+          </div>
+
+          <div class="archive-grid">
+            <article
+              class="archive-card"
+              data-track="ai"
+              data-audience="architect"
+              data-keywords="ai agents orchestration employee support intake workflow"
+            >
+              <a class="archive-card-link" href="session.html?session=ai-service-request">
+                <div class="archive-thumb-shell theme-ai">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">AI and agents</span>
+                    <strong>Internal ops assistant</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>AI and agents</span>
+                  <span>Architects</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>52 min</span>
+                  <span>April 18, 2026</span>
+                </div>
+                <h3>Build an AI service request assistant</h3>
+                <p>
+                  A hands-on walkthrough for shaping an intake flow with agent prompts, approvals,
+                  and routing rules.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+
+            <article
+              class="archive-card"
+              data-track="integration"
+              data-audience="developer"
+              data-keywords="integration sap api order sync workflow data"
+            >
+              <a class="archive-card-link" href="session.html?session=lob-integration">
+                <div class="archive-thumb-shell theme-integration">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">Integrations</span>
+                    <strong>Core system sync</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>Integrations</span>
+                  <span>Developers</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>41 min</span>
+                  <span>April 11, 2026</span>
+                </div>
+                <h3>Connect a line-of-business app to core systems</h3>
+                <p>
+                  A practical build showing how to shape APIs, map data, and create a manageable sync workflow.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+
+            <article
+              class="archive-card"
+              data-track="automation"
+              data-audience="technical-lead"
+              data-keywords="automation approvals onboarding workflow tasks handoff"
+            >
+              <a class="archive-card-link" href="session.html?session=onboarding-automation">
+                <div class="archive-thumb-shell theme-automation">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">Automation</span>
+                    <strong>Employee onboarding</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>Automation</span>
+                  <span>Technical leads</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>48 min</span>
+                  <span>April 4, 2026</span>
+                </div>
+                <h3>Automate a new-employee onboarding flow</h3>
+                <p>
+                  A build focused on approvals, task orchestration, and making a cross-team process easier to run.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+
+            <article
+              class="archive-card"
+              data-track="experience"
+              data-audience="developer"
+              data-keywords="customer portal case management responsive ux dashboard"
+            >
+              <a class="archive-card-link" href="session.html?session=case-management-portal">
+                <div class="archive-thumb-shell theme-experience">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">Experience and apps</span>
+                    <strong>Case portal UX</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>Experience and apps</span>
+                  <span>Developers</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>36 min</span>
+                  <span>March 28, 2026</span>
+                </div>
+                <h3>Build a responsive case management portal</h3>
+                <p>
+                  A practical app-focused session centered on navigation, case status visibility, and responsive layouts.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+
+            <article
+              class="archive-card"
+              data-track="ai"
+              data-audience="technical-lead"
+              data-keywords="blueprint ai roadmap feasibility workflow copilots planning"
+            >
+              <a class="archive-card-link" href="session.html?session=ai-blueprint-starter">
+                <div class="archive-thumb-shell theme-ai-alt">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">AI blueprint</span>
+                    <strong>Scoping the first build</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>AI and agents</span>
+                  <span>Technical leads</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>44 min</span>
+                  <span>March 21, 2026</span>
+                </div>
+                <h3>Turn an AI blueprint into a scoped starter build</h3>
+                <p>
+                  A session about translating abstract AI ideas into a sequence of real technical decisions and a practical first milestone.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+
+            <article
+              class="archive-card"
+              data-track="integration"
+              data-audience="architect"
+              data-keywords="identity sso provisioning governance enterprise integration"
+            >
+              <a class="archive-card-link" href="session.html?session=identity-governance">
+                <div class="archive-thumb-shell theme-governance">
+                  <img src="BILBannerNew.png" alt="" class="archive-thumb" />
+                  <div class="archive-thumb-overlay">
+                    <span class="thumb-kicker">Governance</span>
+                    <strong>Identity and roles</strong>
+                  </div>
+                </div>
+              <div class="archive-card-body">
+                <div class="archive-tags">
+                  <span>Integrations</span>
+                  <span>Architects</span>
+                </div>
+                <div class="archive-meta-line">
+                  <span>39 min</span>
+                  <span>March 14, 2026</span>
+                </div>
+                <h3>Wire identity and governance into a first solution</h3>
+                <p>
+                  A session on shaping SSO, user roles, and enterprise controls early instead of adding them at the end.
+                </p>
+                <span class="archive-cta">Open session page</span>
+              </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <h3>No sessions match those filters yet.</h3>
+            <p>Try a broader search, or submit an idea for a new session below.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="idea-form">
+        <div class="container form-grid">
+          <div class="form-copy">
+            <p class="eyebrow">Suggest a future build</p>
+            <h2>Submit ideas for the next Build It Live session.</h2>
+            <p>
+              Use this form to propose a workflow, application, integration scenario, or AI-enabled
+              use case you would like to see built live and archived for others to revisit later.
+            </p>
+            <p class="form-note">
+              This is a mockup form with client-side validation only. Replace the placeholder behavior
+              with your actual intake flow when you are ready.
+            </p>
+
+            <div class="idea-queue-card">
+              <h3>Suggested builds already in the queue</h3>
+              <div class="idea-submissions-list" id="idea-submissions-list">
+                <article class="idea-queue-item">
+                  <div>
+                    <strong>Operations status board for plant incidents</strong>
+                    <p>Requested by Jordan Patel at Northline Manufacturing</p>
+                  </div>
+                  <span>Automation</span>
+                </article>
+                <article class="idea-queue-item">
+                  <div>
+                    <strong>Partner onboarding portal with document collection</strong>
+                    <p>Requested by Alexis Moore at Summit Distribution</p>
+                  </div>
+                  <span>Experience and apps</span>
+                </article>
+                <article class="idea-queue-item">
+                  <div>
+                    <strong>Internal AI assistant for policy lookup and case routing</strong>
+                    <p>Requested by Chris Ibarra at Beacon Health Systems</p>
+                  </div>
+                  <span>AI and agents</span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <form
+            class="booking-form idea-submission-form js-validated-form js-idea-form"
+            data-success-message="Thanks. Your build idea has been captured and added to the mock queue below."
+            data-append-target="idea-submissions-list"
+            novalidate
+          >
+            <div class="field-row">
+              <label for="idea-submission-title">Submission Title <span class="required-mark">*</span></label>
+              <input id="idea-submission-title" name="submissionTitle" type="text" required />
+              <p class="field-error" id="idea-submission-title-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-description">Describe the request (be descriptive!)</label>
+              <textarea
+                id="idea-description"
+                name="requestDescription"
+                rows="6"
+                placeholder="Explain the workflow, the problem to solve, who it helps, and what a successful live build would demonstrate."
+                required
+              ></textarea>
+              <p class="field-error" id="idea-description-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-integrations">External Integrations</label>
+              <textarea
+                id="idea-integrations"
+                name="externalIntegrations"
+                rows="4"
+                placeholder="List any systems, APIs, data sources, or external tools that should be part of the build."
+              ></textarea>
+              <p class="field-error" id="idea-integrations-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-name">Your Name</label>
+              <input id="idea-name" name="name" type="text" autocomplete="name" required />
+              <p class="field-error" id="idea-name-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-email">Your Email</label>
+              <input id="idea-email" name="email" type="email" autocomplete="email" required />
+              <p class="field-error" id="idea-email-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-company">Your Company</label>
+              <input id="idea-company" name="company" type="text" autocomplete="organization" required />
+              <p class="field-error" id="idea-company-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-role">Your Title</label>
+              <input id="idea-role" name="jobTitle" type="text" />
+              <p class="field-error" id="idea-role-error"></p>
+            </div>
+
+            <div class="field-row">
+              <label for="idea-category">Primary Track</label>
+              <select id="idea-category" name="ideaCategory" required>
+                <option value="">Choose a category</option>
+                <option value="ai">AI and agents</option>
+                <option value="integration">Integrations</option>
+                <option value="automation">Automation</option>
+                <option value="experience">Experience and apps</option>
+              </select>
+              <p class="field-error" id="idea-category-error"></p>
+            </div>
+
+            <button class="button button-primary" type="submit">Submit Build Idea</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section final-cta">
+        <div class="container final-cta-shell">
+          <div>
+            <p class="eyebrow">Keep exploring</p>
+            <h2>Want technical guidance and build content in one flow?</h2>
+            <p>
+              Start on the technical landing page, then send people into the archive when they want
+              recorded build sessions, examples, and a place to suggest the next idea.
+            </p>
+          </div>
+          <div class="final-cta-actions">
+            <a class="button button-primary" href="index.html">Back to Technical Landing Page</a>
+            <a class="button button-secondary" href="#idea-form">Submit a Build Idea</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <p>Build It Live archive mockup for searchable technical sessions and future idea intake.</p>
+        <a href="#main-content">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
