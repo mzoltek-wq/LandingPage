@@ -357,3 +357,40 @@ function initSessionPage() {
 }
 
 initSessionPage();
+
+function initTestimonialRotator() {
+  const cards = Array.from(document.querySelectorAll("[data-testimonial-card]"));
+  const dots = Array.from(document.querySelectorAll("[data-testimonial-dot]"));
+
+  if (!cards.length || cards.length !== dots.length) {
+    return;
+  }
+
+  let activeIndex = cards.findIndex((card) => card.classList.contains("is-active"));
+  if (activeIndex < 0) {
+    activeIndex = 0;
+  }
+
+  function setActive(index) {
+    cards.forEach((card, cardIndex) => {
+      card.classList.toggle("is-active", cardIndex === index);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === index);
+    });
+
+    activeIndex = index;
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setActive(index));
+  });
+
+  window.setInterval(() => {
+    const nextIndex = (activeIndex + 1) % cards.length;
+    setActive(nextIndex);
+  }, 4200);
+}
+
+initTestimonialRotator();
