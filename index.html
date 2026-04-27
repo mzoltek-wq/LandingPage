@@ -438,7 +438,7 @@
                 technical step.
               </p>
               <p><strong>Ideal for:</strong> Developers, architects, and teams starting evaluation.</p>
-              <a class="button button-secondary" href="#booking-form">Book this session</a>
+              <a class="button button-secondary" href="#booking-form" data-session-choice="technical-discussion">Book this session</a>
             </article>
 
             <article class="booking-card" id="book-demo">
@@ -447,7 +447,7 @@
                 Review relevant capabilities and talk through how the platform maps to your use case.
               </p>
               <p><strong>Ideal for:</strong> Teams that want a guided walkthrough tied to their needs.</p>
-              <a class="button button-secondary" href="#booking-form">Request demo discussion</a>
+              <a class="button button-secondary" href="#booking-form" data-session-choice="demo-session">Request demo discussion</a>
             </article>
 
             <article class="booking-card featured-booking" id="book-blueprint">
@@ -458,7 +458,7 @@
                 realistic AI-first starting point.
               </p>
               <p><strong>Ideal for:</strong> Technical leaders exploring AI-enabled business workflows.</p>
-              <a class="button button-primary" href="#booking-form">Schedule blueprint session</a>
+              <a class="button button-primary" href="#booking-form" data-session-choice="ai-blueprint-session">Schedule blueprint session</a>
             </article>
 
             <article class="booking-card" id="book-usecase">
@@ -467,7 +467,7 @@
                 Bring a practical workflow or app idea and shape it into a sensible first build.
               </p>
               <p><strong>Ideal for:</strong> Teams ready to move from curiosity to a defined first project.</p>
-              <a class="button button-secondary" href="#use-case">Plan first use case</a>
+              <a class="button button-secondary" href="#booking-form" data-session-choice="first-use-case-support">Plan first use case</a>
             </article>
           </div>
         </div>
@@ -509,26 +509,14 @@
             </div>
 
             <div class="field-row">
-              <label for="help-topic">What do you want help with?</label>
-              <select id="help-topic" name="helpTopic" required>
-                <option value="">Select a topic</option>
-                <option value="technical-guidance">Technical guidance</option>
-                <option value="demo">Demo discussion</option>
-                <option value="ai-blueprint">AI blueprint session</option>
-                <option value="getting-started">Getting started on the platform</option>
-                <option value="first-use-case">First use-case support</option>
-              </select>
-              <p class="field-error" id="help-topic-error"></p>
-            </div>
-
-            <div class="field-row">
-              <label for="session-type">Preferred session type</label>
+              <label for="session-type">Session type</label>
               <select id="session-type" name="sessionType" required>
                 <option value="">Choose a session</option>
-                <option value="intro-call">30-minute technical intro call</option>
-                <option value="demo-discussion">Demo discussion</option>
-                <option value="blueprint-session">AI blueprint session</option>
-                <option value="use-case-session">First use-case working session</option>
+                <option value="technical-discussion">Technical Discussion</option>
+                <option value="demo-session">Demo Session</option>
+                <option value="ai-blueprint-session">AI Blueprint Session</option>
+                <option value="first-use-case-support">First Use Case Support</option>
+                <option value="other">Other</option>
               </select>
               <p class="field-error" id="session-type-error"></p>
             </div>
@@ -542,6 +530,7 @@
                 placeholder="Tell us about your architecture, use case, or where you want help getting started."
               ></textarea>
               <p class="field-error" id="message-error"></p>
+              <p class="field-help" id="message-help">Required when session type is set to Other.</p>
             </div>
 
             <button class="button button-primary" type="submit">Submit request</button>

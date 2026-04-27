@@ -11,13 +11,17 @@ const baseValidators = {
     message: "Please enter your company name.",
     validate: (value) => value.trim().length > 1,
   },
-  helpTopic: {
-    message: "Please choose what you want help with.",
+  sessionType: {
+    message: "Please choose a session type.",
     validate: (value) => value.trim() !== "",
   },
-  sessionType: {
-    message: "Please choose a preferred session type.",
-    validate: (value) => value.trim() !== "",
+  message: {
+    message: "Please add a message when session type is Other.",
+    validate: (value, field) => {
+      const form = field.form;
+      const sessionType = form?.querySelector('[name="sessionType"]')?.value;
+      return sessionType !== "other" || value.trim().length > 0;
+    },
   },
   submissionTitle: {
     message: "Please enter a submission title.",
@@ -60,7 +64,7 @@ function validateField(field) {
     return true;
   }
 
-  const isValid = rule.validate(field.value);
+  const isValid = rule.validate(field.value, field);
   setFieldError(field, isValid ? "" : rule.message);
   return isValid;
 }
@@ -116,6 +120,54 @@ function initValidatedForm(form) {
 
 document.querySelectorAll(".booking-form, .js-validated-form").forEach((form) => {
   initValidatedForm(form);
+});
+
+function syncSessionMessageRequirement(form) {
+  const sessionTypeField = form.querySelector('[name="sessionType"]');
+  const messageField = form.querySelector('[name="message"]');
+  const helpText = form.querySelector("#message-help");
+
+  if (!sessionTypeField || !messageField) {
+    return;
+  }
+
+  const requiresMessage = sessionTypeField.value === "other";
+  messageField.required = requiresMessage;
+
+  if (helpText) {
+    helpText.textContent = requiresMessage
+      ? "Message is required when session type is set to Other."
+      : "Optional unless you select Other.";
+  }
+
+  if (messageField.classList.contains("invalid")) {
+    validateField(messageField);
+  }
+}
+
+document.querySelectorAll(".booking-form").forEach((form) => {
+  const sessionTypeField = form.querySelector('[name="sessionType"]');
+
+  if (sessionTypeField) {
+    syncSessionMessageRequirement(form);
+    sessionTypeField.addEventListener("change", () => syncSessionMessageRequirement(form));
+  }
+});
+
+document.querySelectorAll("[data-session-choice]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const bookingForm = document.querySelector(".booking-form");
+    const sessionTypeField = bookingForm?.querySelector('[name="sessionType"]');
+    const selectedValue = link.getAttribute("data-session-choice");
+
+    if (!bookingForm || !sessionTypeField || !selectedValue) {
+      return;
+    }
+
+    sessionTypeField.value = selectedValue;
+    sessionTypeField.dispatchEvent(new Event("change", { bubbles: true }));
+    validateField(sessionTypeField);
+  });
 });
 
 function appendIdeaSubmission(form) {
