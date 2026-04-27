@@ -89,7 +89,16 @@ function initValidatedForm(form) {
     const allValid = requiredFields.every((field) => validateField(field));
 
     if (!allValid) {
-      statusMessage.textContent = "Please fix the highlighted fields and try again.";
+      const sessionTypeField = form.querySelector('[name="sessionType"]');
+      const messageField = form.querySelector('[name="message"]');
+      const suppressGlobalError =
+        sessionTypeField?.value === "other" &&
+        messageField?.classList.contains("invalid") &&
+        requiredFields.filter((field) => field.classList.contains("invalid")).length === 1;
+
+      statusMessage.textContent = suppressGlobalError
+        ? ""
+        : "Please fix the highlighted fields and try again.";
       statusMessage.style.color = "#b31a21";
       const firstInvalidField = requiredFields.find((field) => field.classList.contains("invalid"));
 
@@ -125,7 +134,6 @@ document.querySelectorAll(".booking-form, .js-validated-form").forEach((form) =>
 function syncSessionMessageRequirement(form) {
   const sessionTypeField = form.querySelector('[name="sessionType"]');
   const messageField = form.querySelector('[name="message"]');
-  const helpText = form.querySelector("#message-help");
 
   if (!sessionTypeField || !messageField) {
     return;
@@ -133,12 +141,21 @@ function syncSessionMessageRequirement(form) {
 
   const requiresMessage = sessionTypeField.value === "other";
   messageField.required = requiresMessage;
+  const messagePromptByType = {
+    "technical-discussion":
+      "Optional: Tell us what you're hoping to get out of this technical discussion.",
+    "demo-session":
+      "Optional: Tell us what you'd like to see from the platform in this demo.",
+    "ai-blueprint-session":
+      "Optional: Tell us about the manual processes, workflows, or coordination points you're looking to automate.",
+    "first-use-case-support":
+      "Optional: Tell us about the first use case you want help shaping or validating.",
+    other: "Tell us what you're looking to discuss.",
+  };
 
-  if (helpText) {
-    helpText.textContent = requiresMessage
-      ? "Message is required when session type is set to Other."
-      : "Optional unless you select Other.";
-  }
+  messageField.placeholder =
+    messagePromptByType[sessionTypeField.value] ||
+    "Optional: Share any architecture context, goals, or technical questions ahead of the session.";
 
   if (messageField.classList.contains("invalid")) {
     validateField(messageField);
